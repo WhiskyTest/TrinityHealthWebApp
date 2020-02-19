@@ -1,0 +1,36 @@
+﻿@page
+@model TrinityHealth.ListModel
+@{
+    ViewData["Title"] = "Exercises";
+}
+
+<h1>Exercises</h1>
+
+
+
+    <form method="get">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="search" class="form-control" 
+                       asp-for="SearchTerm"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-dark">Search
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+
+    </form>
+
+@foreach(var exercise in Model.Exercises)
+{
+    <partial name="_Summary" model="exercise" />
+}
+
+
+
+<a asp-page=".\Edit" class="btn btn-primary">Add New</a>
+
+<div>@Model.Message</div>
+

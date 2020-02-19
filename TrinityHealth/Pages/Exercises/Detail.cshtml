@@ -1,0 +1,24 @@
+﻿@page "{exerciseId:int}"
+@model TrinityHealth.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@if(Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+<h1>@Model.Exercise.Name</h1>
+<div>
+   Id: @Model.Exercise.Id
+</div>
+<div>
+   Description: @Model.Exercise.Description
+</div>
+
+<div>
+    Muscle Group: @Model.Exercise.Muscle
+</div>
+
+<a asp-page="./List" class="btn btn-link">All Exercises</a>

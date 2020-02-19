@@ -1,0 +1,33 @@
+﻿@page "{exerciseId:int?}"
+@model TrinityHealth.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editing @Model.Exercise.Name</h1>
+
+<form method="post">
+
+
+    <input type="hidden" asp-for="Exercise.Id" />
+
+    <div class="form-group">
+        <label asp-for="Exercise.Name"></label>
+        <input asp-for="Exercise.Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Exercise.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Exercise.Description"></label>
+        <input asp-for="Exercise.Description" class="form-control" />
+        <span class="text-danger" asp-validation-for="Exercise.Description"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Exercise.Muscle"></label>
+        <select class="form-control" asp-for="Exercise.Muscle" asp-items="Model.Muscles"></select>
+        <span class="text-danger" asp-validation-for="Exercise.Muscle"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+</form>

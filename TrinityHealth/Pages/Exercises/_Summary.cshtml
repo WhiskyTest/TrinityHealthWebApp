@@ -1,0 +1,31 @@
+﻿@using TrinityHealth.Core
+
+@model Exercise
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>@Model.Name</h3>
+    </div>
+    <div class="panel-body">
+        <span>Description: @Model.Description</span>
+        <span>Muscle Group: @Model.Muscle</span>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-outline-dark"
+           asp-page="./Detail"
+           asp-route-exerciseId="@Model.Id">
+            <i class="glyphicon btn-info">Info</i>
+        </a>
+        <a class="btn btn-outline-dark"
+           asp-page="./Edit"
+           asp-route-exerciseId="@Model.Id">
+            <i class="glyphicon btn-toolbar">Edit</i>
+        </a>
+        <a class="btn btn-outline-dark"
+           asp-page="./Delete"
+           asp-route-exerciseId="@Model.Id">
+            <i class="glyphicon btn-danger">Delete</i>
+        </a>
+    </div>
+
+</div>
